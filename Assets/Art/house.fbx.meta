@@ -6,7 +6,97 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 13 - Default
+    second: {fileID: 2100000, guid: 0ec3dd6682788474ea10376cbbdde4c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 14 - Default
+    second: {fileID: 2100000, guid: 2ecc5363ee1d4b74f9d06f85c9381183, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 15 - Default
+    second: {fileID: 2100000, guid: 2f09257c323bab44b8f9c0bd3d5a2d14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 19 - Default
+    second: {fileID: 2100000, guid: fc117c93e33081e449aed0635e3a2ee1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 20 - Default
+    second: {fileID: 2100000, guid: f5384438afc695d43a4839039c54e15d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ac1_plastic
+    second: {fileID: 2100000, guid: e92395ac8a66bf445bcc06661c65c9b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ac_black_plastic
+    second: {fileID: 2100000, guid: e18b4b5750598ad4d83cbeccab228004, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ac_bolts_
+    second: {fileID: 2100000, guid: 9e38b6d898b34bc4083bee25eb7d1088, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ac_brushedmetal
+    second: {fileID: 2100000, guid: b16e8bcb55165c64699fcbecd46247a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ac_copper
+    second: {fileID: 2100000, guid: 37f2928bda7773e40bd7e9ce9680afee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ac_goldmetal
+    second: {fileID: 2100000, guid: 9dca530378509b541a13b91676f35c88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ac_plastic
+    second: {fileID: 2100000, guid: 0f7bcbfc6522a3e45837c39e7670ec26, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ac_rubber
+    second: {fileID: 2100000, guid: b0f31ba09267fe54ea7a808e1e9c5d65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ac_welder
+    second: {fileID: 2100000, guid: 01992143e4240bd4e954540d49a0289b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ac_wire
+    second: {fileID: 2100000, guid: 44c4b60977435cf44a278d3f9608af95, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bed_sheet
+    second: {fileID: 2100000, guid: 8bd015fd0abf6d4448cb1dfb0ef57864, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pipe
+    second: {fileID: 2100000, guid: 1256873ae6e82e049b4d2d6c0881a5c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: windows_metal
+    second: {fileID: 2100000, guid: d1d95705940e41f47b0c351d85eae49e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
