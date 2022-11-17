@@ -15,6 +15,21 @@ public class Grabable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         }
     }
 
+    private static bool grabbing;
+
+    public static bool Grabbing
+    {
+        get => grabbing;
+        set
+        {
+            if (grabbing == value)
+                return;
+            grabbing = value;
+            OnGrabUpdate?.Invoke(grabbing);
+        }
+    }
+    public static event System.Action<bool> OnGrabUpdate;
+
     public RectTransform RectTransform => rectTransform;
     private RectTransform rectTransform;
     
@@ -32,6 +47,7 @@ public class Grabable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     public virtual void OnBeginDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = false;
+        Grabable.Grabbing = true;
     }
 
     public virtual void OnDrag(PointerEventData eventData)
@@ -42,6 +58,7 @@ public class Grabable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     public virtual void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = true;
+        Grabable.Grabbing = false;
     }
 
     public void OnPointerEnter(PointerEventData eventData)

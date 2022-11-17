@@ -31,32 +31,40 @@ namespace CyberPunkCoding
         {
             if (eventData.pointerDrag.TryGetComponent(out CommandUiObject commandUiObject))
             {
-                if (!next)
+                if(IsCommandUiInChainedList(commandUiObject))
+                    return;
+                
+                if (Next)
                 {
-                    next = commandUiObject;
-                    next.last = this;
+                    CommandUiObject _next = Next;
+                    while (_next.Next)
+                    {
+                        _next = _next.Next;
+                    }
+                    _next.Next = commandUiObject;
+                    commandUiObject.Last = _next;
                 }
                 else
                 {
-                    next.last = commandUiObject;
-                    commandUiObject.next = next;
-                    next = commandUiObject;
-                    next.last = this;
+                    Next = commandUiObject;
+                    Next.Last = this;
                 }
+
                 SetNextCommandsAnchoredPosition();
             }
         }
 
         public Command[] GetCommands()
         {
-            if (!next) return Array.Empty<Command>();
+            if (!Next) return Array.Empty<Command>();
             List<Command> commands = new();
-            CommandUiObject _next = next;
+            CommandUiObject _next = Next;
             while (_next)
             {
                 commands.Add(_next.Command);
-                _next = _next.next;
+                _next = _next.Next;
             }
+
             return commands.ToArray();
         }
     }

@@ -42,12 +42,13 @@ namespace CyberPunkCoding
         private IEnumerator followCommandCoroutine;
         private static readonly int WalkingAnim = Animator.StringToHash("Walking");
 
-        public void FollowCommand(Command[] commands, System.Action onCommandsExecuted)
+        public bool FollowCommand(Command[] commands, System.Action onCommandsExecuted)
         {
             if (followCommandCoroutine != null)
-                return;
+                return false;
             followCommandCoroutine = FollowCommandsCoroutine(commands, onCommandsExecuted);
             StartCoroutine(followCommandCoroutine);
+            return true;
         }
 
         IEnumerator FollowCommandsCoroutine(Command[] commands, System.Action onCommandsExecuted)
@@ -110,6 +111,7 @@ namespace CyberPunkCoding
             else valid = true;
 
             onCommandsExecuted?.Invoke();
+            yield return new WaitForSecondsRealtime(0.2f);
             followCommandCoroutine = null;
         }
 

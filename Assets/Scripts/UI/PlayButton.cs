@@ -18,34 +18,35 @@ namespace CyberPunkCoding
                 {
                     if (playing)
                         return;
-                    playing = true;
-                    Pawn.Instance.FollowCommand(commandUiContainer.GetCommands(), () =>
-                    {
-                        bool win = true;
-                        Objective[] objectives = FindObjectsOfType<Objective>();
-                        foreach (Objective objective in objectives)
-                        {
-                            if (!objective.Valid)
-                            {
-                                win = false;
-                                break;
-                            }
-                        }
-
-                        if (win)
-                        {
-                            print("<color=green>WON</color>");
-                            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                        }
-                        else
-                        {
-                            foreach (Objective objective in objectives)
-                                objective.Reset();
-                            playing = false;
-                        }
-                    });
+                    bool success = Pawn.Instance.FollowCommand(commandUiContainer.GetCommands(), OnCommandsFollowed);
+                    if (success) playing = true;
                 }
             );
+        }
+
+        private void OnCommandsFollowed()
+        {
+            bool win = true;
+            Objective[] objectives = FindObjectsOfType<Objective>();
+            foreach (Objective objective in objectives)
+            {
+                if (!objective.Valid)
+                {
+                    win = false;
+                    break;
+                }
+            }
+
+            if (win)
+            {
+                print("<color=green>WON</color>");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            else
+            {
+                foreach (Objective objective in objectives) objective.Reset();
+                playing = false;
+            }
         }
     }
     
